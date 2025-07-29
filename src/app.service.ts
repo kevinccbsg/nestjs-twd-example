@@ -14,5 +14,10 @@ export class AppService {
     await this.todoRepository.save(todo);
     return { success: true };
   }
+
+  async getTodos() {
+    const todos = await this.todoRepository.find();
+    return todos;
+  }
 }
 
